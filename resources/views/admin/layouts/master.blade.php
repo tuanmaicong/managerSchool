@@ -42,7 +42,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    @include('layouts.partials.sidebar')
+    @include('admin.layouts.partials.sidebar')
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -52,35 +52,35 @@
         <div id="content">
 
             <!-- Topbar -->
-            @include('layouts.partials.topbar')
+            @include('admin.layouts.partials.topbar')
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-            <div class="card shadow mb-4">
-                <div class="col-md-6 pt-3">
-                    @if(session()->has('msg'))
-                        <div class="alert
+                <div class="card shadow mb-4">
+                    <div class="col-md-6 pt-3">
+                        @if(session()->has('msg'))
+                            <div class="alert
             @if(session()->get('status') == \Illuminate\Http\Response::HTTP_OK)
                 alert-success
             @else
                 alert-danger
             @endif
             ">
-                            <p>{{ session()->get('msg') }}</p>
+                                <p>{{ session()->get('msg') }}</p>
+                            </div>
+                        @endif
+                    </div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
                     @endif
                 </div>
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-            </div>
             </div>
             @yield('content')
             <!-- /.container-fluid -->
@@ -89,7 +89,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        @include('layouts.partials.footer')
+        @include('admin.layouts.partials.footer')
         <!-- End of Footer -->
 
     </div>
@@ -104,7 +104,7 @@
 </a>
 
 <!-- Logout Modal-->
-@include('layouts.partials.logout')
+@include('admin.layouts.partials.logout')
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('be/vendor/jquery/jquery.min.js')}}"></script>

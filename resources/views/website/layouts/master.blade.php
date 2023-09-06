@@ -12,12 +12,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('fe/assets/images/favicon.png')}}">
+    <style>
+        /* Ẩn menu con ban đầu */
+        .submenu {
+            display: none;
+        }
 
+        /* Hiển thị menu con khi hover vào menu cha */
+        .menu-parent:hover .submenu {
+            display: block;
+        }
+
+        /* Tạo kiểu dáng menu */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Kiểu dáng menu con */
+        .submenu {
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+
+        .submenu li {
+            margin: 5px 0;
+        }
+
+    </style>
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/bootstrap.min.css')}}">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{asset('fe/assets/css/style.css')}}">
+    <!-- CSS
+       ============================================ -->
 
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/flaticon.css')}}">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/aos.css')}}">
+    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/nice-select.css')}}">
+    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/jquery.powertip.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/magnific-popup.css')}}">
     @stack('styles')
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <link rel="stylesheet" {{asset('fe/href="assets')}}/css/vendor/plugins.min.css">
@@ -41,16 +92,16 @@
 
     <!-- Header Start  -->
     <div class="section header">
-        <div class="header-top-section">
-            <div class="container">
-                <div class="header-top-wrap">
-                    <div class="header-top-content text-center">
-                        <p>Learn the latest trends indrive business innovation with the
-                            <span>Oxford  Fintech Programe</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--        <div class="header-top-section">--}}
+        {{--            <div class="container">--}}
+        {{--                <div class="header-top-wrap">--}}
+        {{--                    <div class="header-top-content text-center">--}}
+        {{--                        <p>Learn the latest trends indrive business innovation with the--}}
+        {{--                            <span>Oxford  Fintech Programe</span></p>--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
         <div class="header-bottom-section">
 
             <div class="container-fluid custom-container">
@@ -66,14 +117,14 @@
                         <!--  Header Logo End  -->
 
                         <!--  Header Menu Start  -->
-                        @include('client.layouts.partials.headermenu')
+                        @include('website.partials.headermenu')
                         <!--  Header Menu End  -->
 
                     </div>
 
 
                     <!-- Header Meta Start -->
-                    @include('client.layouts.partials.headermeta')
+                    @include('website.partials.headermeta')
                     <!-- Header Meta End -->
 
                 </div>
@@ -146,7 +197,7 @@
 
 
     <!-- Page Banner Start -->
-    @include('client.layouts.partials.banner')
+    @yield('banner')
     <!-- Page Banner End -->
 
     <!-- Content Start -->
@@ -155,7 +206,7 @@
 
 
     <!-- Footer Start -->
-    @include('client.layouts.partials.footer')
+    @include('website.partials.footer')
     <!-- Footer End -->
 
     <!-- back to top start -->
@@ -168,7 +219,24 @@
 
 </div>
 <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+<!-- JS
+============================================ -->
+<script src="{{asset('fe/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+<script src="{{asset('fe/assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
 
+<!-- Bootstrap JS -->
+<script src="{{asset('fe/assets/js/plugins/popper.min.js')}}"></script>
+<script src="{{asset('fe/assets/js/plugins/bootstrap.min.js')}}"></script>
+
+<!-- Plugins JS -->
+<script src="{{asset('fe/assets/js/plugins/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('fe/assets/js/plugins/aos.js')}}"></script>
+<script src="{{asset('fe/assets/js/plugins/waypoints.min.js')}}"></script>
+<script src="{{asset('fe/assets/js/plugins/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('fe/assets/js/plugins/jquery.nice-select.min.js')}}"></script>
+<script src="{{asset('fe/assets/js/plugins/back-to-top.js')}}"></script>
+<script src="{{asset('fe/assets/js/plugins/jquery.powertip.min.js')}}"></script>
+<script src="{{asset('fe/assets/js/plugins/jquery.magnific-popup.min.js')}}"></script>
 @stack('scripts')
 
 <!-- Main JS -->

@@ -99,17 +99,17 @@
 <script>
     // Lấy các phần tử cần thiết từ DOM
     const form = document.getElementById('myForm');
-    const input1 = document.getElementById('email');
-    const input2 = document.getElementById('password');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
     const submitButton = document.getElementById('submitButton');
 
     // Lắng nghe sự kiện nhập liệu trong các input
-    input1.addEventListener('input', checkInputs);
-    input2.addEventListener('input', checkInputs);
+    email.addEventListener('input', checkInputs);
+    password.addEventListener('input', checkInputs);
 
     // Hàm kiểm tra dữ liệu và hiển thị nút submit
     function checkInputs() {
-        if (input1.value.trim() !== '' && input2.value.trim() !== '') {
+        if (email.value.trim() !== '' && password.value.trim() !== '') {
             submitButton.removeAttribute('disabled');
         } else {
             submitButton.setAttribute('disabled', 'true');

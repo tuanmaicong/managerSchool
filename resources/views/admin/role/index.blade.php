@@ -5,9 +5,8 @@
 @endsection
 @section('content')
     <div class="container-fluid">
-
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Danh sách tài khoản</h1>
+        <h1 class="h3 mb-2 text-gray-800">Danh sách quyền</h1>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -15,27 +14,31 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Têm</th>
-                            <th>Email</th>
-                            <th>Quyền</th>
+                            <th>ID</th>
+                            <th>Phân quyền</th>
+                            <th>Mô tả</th>
                             <th>Thao tác</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($data as $item)
                             <tr>
+                                <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
-                                <td>{{$item->email}}</td>
-                                <td>{{$item->role?->name}}</td>
+                                <td>{{$item->describe}}</td>
                                 <td>
-                                    <a class="btn btn-primary" href="{{route('admin.users.edit',$item)}}">Edit</a>
-                                    <button class="btn btn-danger" onclick="if(confirm('Ban co chac muon xoa')){
-                                        document.getElementById('item-{{$item->id}}').submit();
-                                    }">Delete</button>
-                                    <form action="{{route('admin.users.destroy',$item)}}" method="post" id="item-{{$item->id}}">
+                                    <a class="btn btn-primary" href="{{route('admin.role.edit',$item)}}"><i class="far fa-edit"></i>Sửa</a>
+                                    <button class="btn btn-danger"
+                                            onclick="if(confirm('Bạn có chắc muốn xóa?')){
+                                                document.getElementById('item-{{$item->id}}').submit();
+                                            }"><i class="fa fa-trash"></i>
+                                    </button>
+
+                                    <form action="{{route('admin.role.destroy',$item)}}" id="item-{{$item->id}}"
+                                          method="post">
                                         @csrf
                                         @method('DELETE')
                                     </form>
@@ -44,11 +47,10 @@
                         @endforeach
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
-        {{$data->links()}}
+
     </div>
 @endsection
 
@@ -63,4 +65,3 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('be/js/demo/datatables-demo.js')}}"></script>
 @endpush
-

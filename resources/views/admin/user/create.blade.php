@@ -33,10 +33,10 @@
                                 <input type="text" class="form-control" id="name" name="name">
                             </div>
                             <div class="mb-3">
-                                <label for="type" class="form-label">Type</label>
+                                <label for="type" class="form-label">Quyền</label>
                                 <select class="form-control" id="type" name="type">
-                                    <option value="admin">Admin</option>
-                                    <option value="member">Member</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Giáo viên</option>
                                 </select>
                             </div>
                         </div>

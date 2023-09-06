@@ -15,8 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-        $data = User::query()->orderByDesc('id')->get();
+        $data = User::query()->with(['role'])->paginate(5);
         $title = 'Danh sách người dùng';
         return view(self::PATH_FOLDER . __FUNCTION__,compact('data','title'));
     }

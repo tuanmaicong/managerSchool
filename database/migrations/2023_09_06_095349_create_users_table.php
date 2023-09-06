@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('avatar');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('type',['admin','member']);
+            $table->foreignId('role_id');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

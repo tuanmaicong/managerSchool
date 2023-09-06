@@ -1,6 +1,9 @@
-@extends('client.layouts.master')
+@extends('website.layouts.master')
 @section('title')
     {{$title}}
+@endsection
+@section('banner')
+    @include('website.partials.banner')
 @endsection
 @section('content')
     <div class="section upstudy-blog-section section-padding">
@@ -199,37 +202,4 @@
         </div>
     </div>
 @endsection
-@push('styles')
-    <!-- CSS
-	============================================ -->
 
-    <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/flaticon.css')}}">
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/swiper-bundle.min.css')}}">
-    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/nice-select.css')}}">
-    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/jquery.powertip.min.css')}}">
-    <link rel="stylesheet" href="{{asset('fe/assets/css/plugins/magnific-popup.css')}}">
-@endpush
-@push('scripts')
-    <!-- JS
-============================================ -->
-    <script src="{{asset('fe/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
-    <script src="{{asset('fe/assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="{{asset('fe/assets/js/plugins/popper.min.js')}}"></script>
-    <script src="{{asset('fe/assets/js/plugins/bootstrap.min.js')}}"></script>
-
-    <!-- Plugins JS -->
-    <script src="{{asset('fe/assets/js/plugins/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('fe/assets/js/plugins/aos.js')}}"></script>
-    <script src="{{asset('fe/assets/js/plugins/waypoints.min.js')}}"></script>
-    <script src="{{asset('fe/assets/js/plugins/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('fe/assets/js/plugins/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('fe/assets/js/plugins/back-to-top.js')}}"></script>
-    <script src="{{asset('fe/assets/js/plugins/jquery.powertip.min.js')}}"></script>
-    <script src="{{asset('fe/assets/js/plugins/jquery.magnific-popup.min.js')}}"></script>
-@endpush

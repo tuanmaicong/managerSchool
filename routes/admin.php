@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\ProfileController;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,4 +28,5 @@ Route::prefix('admin')
         Route::get('profile/{id}',[ProfileController::class,'index'])->name('profile.edit');
         Route::post('profile/{id}',[ProfileController::class,'update'])->name('profile.update');
         Route::resource('category', CategoriesController::class);
+        Route::resource('role', RolesController::class);
     });

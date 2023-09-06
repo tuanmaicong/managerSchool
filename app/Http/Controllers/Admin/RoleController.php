@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use Mockery\Exception;
 
-class RolesController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.

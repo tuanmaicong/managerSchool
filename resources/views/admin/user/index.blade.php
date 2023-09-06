@@ -11,7 +11,9 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">List</h6>
+                <button class="btn btn-primary"><a class="m-0 font-weight-bold text-white"
+                                                   href="{{route('admin.users.create')}}">Thêm mới tài khoản</a>
+                </button>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -34,8 +36,10 @@
                                     <a class="btn btn-primary" href="{{route('admin.users.edit',$item)}}">Edit</a>
                                     <button class="btn btn-danger" onclick="if(confirm('Ban co chac muon xoa')){
                                         document.getElementById('item-{{$item->id}}').submit();
-                                    }">Delete</button>
-                                    <form action="{{route('admin.users.destroy',$item)}}" method="post" id="item-{{$item->id}}">
+                                    }">Delete
+                                    </button>
+                                    <form action="{{route('admin.users.destroy',$item)}}" method="post"
+                                          id="item-{{$item->id}}">
                                         @csrf
                                         @method('DELETE')
                                     </form>

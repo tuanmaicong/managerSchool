@@ -24,20 +24,41 @@
                                 <form action="{{route('postRegister')}}" id="myForm" method="post">
                                     @csrf
                                     <div class="single-form">
-                                        <input type="email" id="email" name="email" class="form-control"
-                                               placeholder="Email">
+                                        <select id="role" name="role_id" class="form-control">
+                                            @foreach($roles as $role)
+                                                @if($role->id == 1 || $role->id == 3)
+                                                    <option disabled value="{{$role->id}}">{{$role->name}}</option>
+                                                @else
+                                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="single-form">
-                                        <input type="text" id="username" name="username" class="form-control"
+                                        <input type="email" id="email" name="email" class="form-control"
+                                               placeholder="Email">
+                                        @error('email')
+                                        <span style="color: white;text-shadow: 2px 2px red;font-size: 14px">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="single-form">
+                                        <input type="text" id="username" name="name" class="form-control"
                                                placeholder="Username or email">
                                     </div>
                                     <div class="single-form">
                                         <input type="password" id="password" name="password" class="form-control"
                                                placeholder="Password">
+                                        @error('password')
+                                        <span style="color: white;text-shadow: 2px 2px red;font-size: 14px">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="single-form">
-                                        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control"
+                                        <input type="password" id="password_confirmation" name="password_confirmation"
+                                               class="form-control"
                                                placeholder="Confirm Password">
+                                        @error('password_confirmation')
+                                        <span style="color: white;text-shadow: 2px 2px red;font-size: 14px">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="single-form">
                                         <button class="btn" id="submitButton" disabled>Đăng ký</button>
@@ -60,17 +81,19 @@
         const username = document.getElementById('username');
         const password = document.getElementById('password');
         const password_confirmation = document.getElementById('password_confirmation');
+        const role = document.getElementById('role');
         const submitButton = document.getElementById('submitButton');
 
         // Lắng nghe sự kiện nhập liệu trong các input
         email.addEventListener('input', checkInputs);
         username.addEventListener('input', checkInputs);
         username.addEventListener('input', checkInputs);
+        role.addEventListener('select', checkInputs);
         password_confirmation.addEventListener('input', checkInputs);
 
         // Hàm kiểm tra dữ liệu và hiển thị nút submit
         function checkInputs() {
-            if (email.value.trim() !== '' && username.value.trim() !== '' && username.value.trim() !== ''&& password_confirmation.value.trim() !== '') {
+            if (email.value.trim() !== '' && username.value.trim() !== '' && username.value.trim() !== '' && password_confirmation.value.trim() !== '' && role.value.trim() !== '') {
                 submitButton.removeAttribute('disabled');
             } else {
                 submitButton.setAttribute('disabled', 'true');

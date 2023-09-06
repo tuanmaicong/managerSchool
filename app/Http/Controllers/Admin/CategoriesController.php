@@ -79,7 +79,7 @@ class CategoriesController extends Controller
     {
         try {
             $model = Categories::query()->findOrFail($id);
-            $model->fill($request->except('name'));
+            $model->fill($request->all());
             $model->save();
 
             return back()->with('status',Response::HTTP_OK)->with('msg','Cập nhật thành công!');

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\UserRegister;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
+use App\Listeners\SendUserRegistrationEmail;
+use App\Mail\WelcomeEmail;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -22,6 +25,11 @@ class RegisterController extends Controller
         }
         try {
             $model = User::query()->create($request->all());
+            $users = User::all();
+            $message = [
+              'name' => $request->get('name'),
+            ];
+            SendUserRegistrationEmail::dispatch($message,$users)->delay(now()->addMinute(1));
             return redirect()->route('login');
         }catch (\Exception $exception){
             return back()->withErrors('errors','Đăng ký không thành công!');

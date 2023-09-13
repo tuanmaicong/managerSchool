@@ -10,17 +10,18 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class UserRegister
+class UserRegistered
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
+    public $email;
+    public $user;
     /**
      * Create a new event instance.
      */
-    public $email;
-    public function __construct($email)
+    public function __construct($email,$user)
     {
         $this->email = $email;
+        $this->user = $user;
     }
 
     /**

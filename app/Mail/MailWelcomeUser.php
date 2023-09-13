@@ -9,22 +9,20 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class WelcomeEmail extends Mailable
+class MailWelcomeUser extends Mailable
 {
     use Queueable, SerializesModels;
-
-    public $data;
-
+    protected $mailData;
     /**
      * Create a new message instance.
      */
-    public function __construct($data)
+    public function __construct($mailData)
     {
-        $this->data = $data;
+        $this->mailData = $mailData;
     }
-
-    public function build()
-    {
-        return $this->from('tuanmccriss@gmail.com')->view('mails.mail')->subject('Thư chào mừng!')->with(['data' => $this->data]);
+    public function build(){
+        return $this->subject('THPT MY DUC B')->view('mails.mail')->with([
+            'data' => $this->mailData,
+        ]);
     }
 }

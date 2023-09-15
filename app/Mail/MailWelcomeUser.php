@@ -3,10 +3,7 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class MailWelcomeUser extends Mailable
@@ -20,9 +17,12 @@ class MailWelcomeUser extends Mailable
     {
         $this->mailData = $mailData;
     }
-    public function build(){
-        return $this->subject('THPT MY DUC B')->view('mails.mail')->with([
-            'data' => $this->mailData,
-        ]);
+    public function build()
+    {
+        return $this->subject('THPH My Duc B')
+            ->view('mails.mail')
+            ->with([
+                'data' => $this->mailData,
+            ]);
     }
 }

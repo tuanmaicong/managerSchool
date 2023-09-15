@@ -23,10 +23,14 @@
                             <div class="login-register-form">
                                 <form action="{{route('postRegister')}}" id="myForm" method="post">
                                     @csrf
+                                    @error('role_id')
+                                    <span style="color: white;text-shadow: 2px 2px red;font-size: 14px">{{ $message }}</span>
+                                    @enderror
                                     <div class="single-form">
                                         <select id="role" name="role_id" class="form-control">
+                                            <option selected value="0">Chọn vai trò</option>
                                             @foreach($roles as $role)
-                                                @if($role->id == 1 || $role->id == 3)
+                                                @if(Str::slug($role->name, '-') == "admin" || $role->name == "Giáo viên")
                                                     <option disabled value="{{$role->id}}">{{$role->name}}</option>
                                                 @else
                                                     <option value="{{$role->id}}">{{$role->name}}</option>
@@ -43,11 +47,11 @@
                                     </div>
                                     <div class="single-form">
                                         <input type="text" id="username" name="name" class="form-control"
-                                               placeholder="Username or email">
+                                               placeholder="Họ tên">
                                     </div>
                                     <div class="single-form">
                                         <input type="password" id="password" name="password" class="form-control"
-                                               placeholder="Password">
+                                               placeholder="Mật khẩu">
                                         @error('password')
                                         <span style="color: white;text-shadow: 2px 2px red;font-size: 14px">{{ $message }}</span>
                                         @enderror
@@ -55,7 +59,7 @@
                                     <div class="single-form">
                                         <input type="password" id="password_confirmation" name="password_confirmation"
                                                class="form-control"
-                                               placeholder="Confirm Password">
+                                               placeholder="Xác nhận mật khẩu">
                                         @error('password_confirmation')
                                         <span style="color: white;text-shadow: 2px 2px red;font-size: 14px">{{ $message }}</span>
                                         @enderror

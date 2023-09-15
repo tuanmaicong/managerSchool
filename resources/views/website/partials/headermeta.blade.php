@@ -7,7 +7,7 @@
     </div>
 
     <div class="header-login d-none d-lg-block">
-        <a class="link" href="{{route('login')}}"><i class="far fa-user"></i> Login</a>
-        <a class="link" href="{{route('register')}}">Register</a>
+        <a class="link" href="{{route('login')}}"><i class="far fa-user"></i>Đăng Nhập</a>
+        <a class="link" href="{{route('register')}}">Đăng ký</a>
     </div>
 </div>

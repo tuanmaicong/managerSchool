@@ -57,7 +57,8 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-4" @if(empty(session()->has('msg'))) style="display: none" @endif>
+
                     <div class="col-md-6 pt-3">
                         @if(session()->has('msg'))
                             <div class="alert

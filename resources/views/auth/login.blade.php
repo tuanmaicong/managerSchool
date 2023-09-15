@@ -15,8 +15,15 @@
                         <!-- Login & Register Box Start -->
                         <div class="login-register-box">
                             <!-- Section Title Start -->
+                            @if(session()->has('msg'))
+                                <span style="color: #66FFCC;">{{session()->get('msg')}}</span>
+                            @endif
                             <div class="section-title">
                                 <h2 class="title" style="color: white">Đăng nhập</h2>
+                            </div>
+                            <div>
+                                <span style="color: white">Bạn đã có tài khoản chưa?</span>
+                                <a href="{{route('register')}}" style="color: #00FFFF;">Đăng ký tài khoản</a>
                             </div>
                             @error('email')
                             <span style="color: white;text-shadow: 2px 2px red;font-size: 14px">{{ $message }}</span>

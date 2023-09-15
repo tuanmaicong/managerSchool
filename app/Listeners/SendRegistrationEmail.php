@@ -13,10 +13,6 @@ class SendRegistrationEmail
     /**
      * Create the event listener.
      */
-    public function __construct()
-    {
-        //
-    }
 
     /**
      * Handle the event.
@@ -25,8 +21,7 @@ class SendRegistrationEmail
     {
         $mailContent = [
             'email' => $event->email,
-            'user' => $event->user,
         ];
-        Mail::to($event->email,$event->user)->send(new MailWelcomeUser($mailContent));
+        Mail::to($event->email)->send(new MailWelcomeUser($mailContent));
     }
 }

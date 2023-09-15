@@ -66,7 +66,7 @@ class CategoriesController extends Controller
      */
     public function edit(string $id)
     {
-        $title = "Sửa danh mục";
+        $title = "Cập nhật danh mục";
         $model = Categories::query()->findOrFail($id);
         return view(OBJECT_ADMIN . DOT . OBJECT_CATEGORY . DOT . __FUNCTION__,
             compact('title','model'));

@@ -11,4 +11,8 @@ class Categories extends Model
     use SoftDeletes;
     use HasFactory;
     protected $fillable = ['name','describe'];
+
+    public function subcategory(){
+        return $this->hasMany(SubCategory::class);
+    }
 }

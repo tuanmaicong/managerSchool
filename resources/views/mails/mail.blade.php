@@ -11,7 +11,6 @@
     <h1>THPT MỸ ĐỨC B</h1>
     <h3>Xin chào,</h3>
     <h2>{{$data['email']}}</h2>
-    <h2>{{$data['name']}}</h2>
     <p>Chúc mừng bạn đã đăng ký thành công tài khoản!</p>
 </body>
 </html>

@@ -14,6 +14,7 @@ class Kernel extends HttpKernel
      *
      * @var array<int, class-string|string>
      */
+    //dùng chung cho cả website
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
@@ -29,6 +30,7 @@ class Kernel extends HttpKernel
      *
      * @var array<string, array<int, class-string|string>>
      */
+    //dùng cho từng route
     protected $middlewareGroups = [
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
@@ -53,6 +55,7 @@ class Kernel extends HttpKernel
      *
      * @var array<string, class-string|string>
      */
+    //khi nào gọi mới sử dụng
     protected $middlewareAliases = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,

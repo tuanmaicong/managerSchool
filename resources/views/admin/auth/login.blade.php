@@ -46,7 +46,7 @@
                                         <span style="color: red;font-size: 14px">{{ $message }}</span>
                                 </div>
                                 @enderror
-                                <form id="myForm" class="user" action="{{route('postLogin')}}" method="post">
+                                <form id="myForm" class="user" action="{{route('admin.postLogin')}}" method="post">
                                     @csrf
                                     <div class="form-group">
                                         <input type="email" id="email" name="email" class="form-control form-control-user"

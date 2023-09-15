@@ -13,6 +13,6 @@ class Authenticate extends Middleware
     //khi chưa đăng nhập sẽ gọi đến hàm redirectTo và trả về route('auth.login')
     protected function redirectTo(Request $request): ?string
     {
-        return $request->expectsJson() ? null : route('auth.login');
+        return $request->expectsJson() ? null : route('admin.login');
     }
 }

@@ -84,6 +84,34 @@
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
+           aria-expanded="true" aria-controls="collapseFive">
+            <i class="fas fas fa-fax"></i>
+            <span>Quản lý lớp học</span>
+        </a>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {{--                <h6 class="collapse-header">Custom Components:</h6>--}}
+                <a class="collapse-item" href="{{route('admin.classroom.index')}}">Danh sách lớp học</a>
+                <a class="collapse-item" href="{{route('admin.classroom.create')}}">Thêm mới lớp học</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix"
+           aria-expanded="true" aria-controls="collapseSix">
+            <i class="fas far fa-folder-open"></i>
+            <span>Quản lý môn học</span>
+        </a>
+        <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {{--                <h6 class="collapse-header">Custom Components:</h6>--}}
+                <a class="collapse-item" href="{{route('admin.subject.index')}}">Danh sách môn học</a>
+                <a class="collapse-item" href="{{route('admin.subject.create')}}">Thêm mới môn học</a>
+            </div>
+        </div>
+    </li>
     <!-- Nav Item - Utilities Collapse Menu -->
 {{--    <li class="nav-item">--}}
 {{--        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"--}}

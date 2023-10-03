@@ -30,9 +30,7 @@
                                         <select id="role" name="role_id" class="form-control">
                                             <option selected value="0">Chọn vai trò</option>
                                             @foreach($roles as $role)
-                                                @if(Str::slug($role->name, '-') == "admin" || $role->name == "Giáo viên")
-                                                    <option disabled value="{{$role->id}}">{{$role->name}}</option>
-                                                @else
+                                                @if($role->id == 4 || $role->id == 5)
                                                     <option value="{{$role->id}}">{{$role->name}}</option>
                                                 @endif
                                             @endforeach
@@ -77,6 +75,13 @@
         </div>
     </div>
 @endsection
+@push('styles')
+    <style>
+        .hidden-option {
+            display: none;
+        }
+    </style>
+@endpush
 @push('scripts')
     <script>
         // Lấy các phần tử cần thiết từ DOM

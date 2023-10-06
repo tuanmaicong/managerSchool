@@ -5,8 +5,10 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ClassroomsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\StudentsController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\SubjectsController;
+use App\Http\Controllers\Admin\TeachersController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,4 +40,6 @@ Route::prefix('admin')
         Route::resource('subcategory', SubCategoryController::class);
         Route::resource('classroom', ClassroomsController::class);
         Route::resource('subject', SubjectsController::class);
+        Route::resource('student', StudentsController::class);
+        Route::resource('teacher', TeachersController::class);
     });

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Classrooms;
+use App\Models\Students;
 use App\Models\Subjects;
 use App\Models\User;
 use Illuminate\Database\Seeder;

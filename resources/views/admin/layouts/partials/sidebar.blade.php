@@ -112,6 +112,34 @@
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven"
+           aria-expanded="true" aria-controls="collapseSeven">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Quản lý học sinh</span>
+        </a>
+        <div id="collapseSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {{--                <h6 class="collapse-header">Custom Components:</h6>--}}
+                <a class="collapse-item" href="{{route('admin.student.index')}}">Danh sách học sinh</a>
+                <a class="collapse-item" href="{{route('admin.student.create')}}">Thêm mới học sinh</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEght"
+           aria-expanded="true" aria-controls="collapseEght">
+            <i class="fas fa-user-tie"></i>
+            <span>Quản lý giáo viên</span>
+        </a>
+        <div id="collapseEght" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {{--                <h6 class="collapse-header">Custom Components:</h6>--}}
+                <a class="collapse-item" href="{{route('admin.teacher.index')}}">Danh sách giáo viên</a>
+                <a class="collapse-item" href="{{route('admin.teacher.create')}}">Thêm mới giáo viên</a>
+            </div>
+        </div>
+    </li>
     <!-- Nav Item - Utilities Collapse Menu -->
 {{--    <li class="nav-item">--}}
 {{--        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"--}}

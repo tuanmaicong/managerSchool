@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Categories;
+use App\Models\SubCategory;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;

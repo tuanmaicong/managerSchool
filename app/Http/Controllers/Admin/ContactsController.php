@@ -16,7 +16,7 @@ class ContactsController extends Controller
     public function index()
     {
         $title = "Danh sách liên hệ";
-        $data = Contacts::query()->get();
+        $data = Contacts::query()->orderByDesc('id')->get();
         return view(self::PATH_FOLDER . DOT .__FUNCTION__,compact('title','data'));
     }
 

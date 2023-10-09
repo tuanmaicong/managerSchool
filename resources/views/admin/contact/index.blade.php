@@ -26,11 +26,11 @@
                         <tbody>
                         @foreach($data as $item)
                             <tr>
-                                <td>{{$item->id}}</td>
-                                <td>{{$item->name}}</td>
-                                <td>{{$item->subject}}</td>
-                                <td>
-                                    <a class="btn btn-primary" href="{{route('admin.contact.detail',$item)}}"><i class="far fa-edit"></i>Sửa</a>
+                                <td class="col-md-1">{{$item->id}}</td>
+                                <td class="col-md-2">{{$item->name}}</td>
+                                <td class="col-md-4">{{$item->subject}}</td>
+                                <td class="col-md-2">
+                                    <a class="btn btn-primary" href="{{route('admin.contact.detail',$item)}}"><i class="far fa-edit"></i>Chi tiết</a>
                                     <button class="btn btn-danger"
                                             onclick="if(confirm('Bạn có chắc muốn xóa?')){
                                                 document.getElementById('item-{{$item->id}}').submit();

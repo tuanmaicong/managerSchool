@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ClassroomsController;
 use App\Http\Controllers\Admin\ContactsController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentsController;
@@ -45,4 +46,5 @@ Route::prefix('admin')
         Route::resource('teacher', TeachersController::class);
         Route::resource('contact', ContactsController::class);
         Route::get('contact/{contact}/detail/',[ContactsController::class,'detail'])->name('contact.detail');
+        Route::resource('news', NewsController::class);
     });

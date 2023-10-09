@@ -25,6 +25,11 @@
                                        value="{{$model->name}}">
                             </div>
                             <div class="mb-3">
+                                <label for="url" class="form-label">Đường dẫn url</label>
+                                <input type="text" class="form-control" id="url" name="url"
+                                       value="{{$model->url}}">
+                            </div>
+                            <div class="mb-3">
                                 <label for="describe" class="form-label">Mô tả</label>
                                 <input type="text" class="form-control" id="describe" name="describe"
                                        value="{{$model->describe}}">

@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Categories;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class CategoriesUpdateRequest extends FormRequest
+class ContactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,13 +21,12 @@ class CategoriesUpdateRequest extends FormRequest
      */
     public function rules(): array
     {
-        $tableName = (new Categories())->getTable();
-        //lấy ra id của đt cập nhật
-        $id = request()->segment('3');
         return [
-            'name' => ['required', 'min:3', 'max:20', Rule::unique($tableName)->ignore($id)],
-            'describe' => 'nullable|max:250',
-            'url' => ['required',Rule::unique($tableName)->ignore($id)],
+            'name' => ['required','min:2','max:256'],
+            'email' => ['required','email'],
+            'phone_number' => ['required'],
+            'subject' => ['required','min:2','max:256'],
+            'message' => ['required','min:2','max:256'],
         ];
     }
 }

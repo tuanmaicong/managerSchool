@@ -23,6 +23,11 @@
                                 <input type="text" class="form-control" id="name" name="name">
                             </div>
                             <div class="mb-3">
+                                <label for="url" class="form-label">Đường dẫn url</label>
+                                <input type="text" class="form-control" id="url" name="url"
+                                       placeholder="Nên đặt trùng với tên danh mục viết liền không dấu">
+                            </div>
+                            <div class="mb-3">
                                 <label for="describe" class="form-label">Mô tả</label>
                                 <input type="text" class="form-control" id="describe" name="describe">
                             </div>

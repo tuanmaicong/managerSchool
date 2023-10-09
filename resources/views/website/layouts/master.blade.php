@@ -204,6 +204,9 @@
     @yield('content')
     <!-- Content End -->
 
+    <!--Banner bottom-->
+    @yield('bannerbottom')
+    <!--End Banner bottom-->
 
     <!-- Footer Start -->
     @include('website.partials.footer')

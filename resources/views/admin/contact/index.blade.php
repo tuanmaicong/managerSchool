@@ -6,7 +6,7 @@
 @section('content')
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Danh sách danh mục</h1>
+        <h1 class="h3 mb-2 text-gray-800">Danh sách liên hệ</h1>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -19,8 +19,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Tên</th>
-                            <th>Url</th>
-                            <th>Mô tả</th>
+                            <th>Tiêu đề</th>
                             <th>Thao tác</th>
                         </tr>
                         </thead>
@@ -29,17 +28,16 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
-                                <td>{{$item->url}}</td>
-                                <td>{{$item->describe}}</td>
+                                <td>{{$item->subject}}</td>
                                 <td>
-                                    <a class="btn btn-primary" href="{{route('admin.category.edit',$item)}}"><i class="far fa-edit"></i>Sửa</a>
+                                    <a class="btn btn-primary" href="{{route('admin.contact.detail',$item)}}"><i class="far fa-edit"></i>Sửa</a>
                                     <button class="btn btn-danger"
                                             onclick="if(confirm('Bạn có chắc muốn xóa?')){
                                                 document.getElementById('item-{{$item->id}}').submit();
                                             }"><i class="fa fa-trash"></i>
                                     </button>
 
-                                    <form action="{{route('admin.category.destroy',$item)}}" id="item-{{$item->id}}"
+                                    <form action="{{route('admin.contact.destroy',$item)}}" id="item-{{$item->id}}"
                                           method="post">
                                         @csrf
                                         @method('DELETE')

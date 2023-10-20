@@ -153,6 +153,34 @@
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTen"
+           aria-expanded="true" aria-controls="collapseTen">
+            <i class="far fa-clock"></i>
+            <span>Quản lý thời gian học</span>
+        </a>
+        <div id="collapseTen" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {{--                <h6 class="collapse-header">Custom Components:</h6>--}}
+                <a class="collapse-item" href="{{route('admin.times.index')}}">Danh sách thời gian học</a>
+                <a class="collapse-item" href="{{route('admin.times.create')}}">Thêm mới thời gian học</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleven"
+           aria-expanded="true" aria-controls="collapseEleven">
+            <i class="fas fa-calendar-week"></i>
+            <span>Quản lý buổi học</span>
+        </a>
+        <div id="collapseEleven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {{--                <h6 class="collapse-header">Custom Components:</h6>--}}
+                <a class="collapse-item" href="{{route('admin.days.index')}}">Danh sách buổi học</a>
+                <a class="collapse-item" href="{{route('admin.days.create')}}">Thêm mới buổi học</a>
+            </div>
+        </div>
+    </li>
     <!-- Nav Item - Utilities Collapse Menu -->
 {{--    <li class="nav-item">--}}
 {{--        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"--}}

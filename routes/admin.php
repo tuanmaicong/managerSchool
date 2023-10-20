@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ClassroomsController;
 use App\Http\Controllers\Admin\ContactsController;
+use App\Http\Controllers\Admin\DaysController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Admin\StudentsController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\SubjectsController;
 use App\Http\Controllers\Admin\TeachersController;
+use App\Http\Controllers\Admin\TimesController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,4 +49,6 @@ Route::prefix('admin')
         Route::resource('contact', ContactsController::class);
         Route::get('contact/{contact}/detail/',[ContactsController::class,'detail'])->name('contact.detail');
         Route::resource('news', NewsController::class);
-    });
+        Route::resource('times', TimesController::class);
+        Route::resource('days', DaysController::class);
+;    });
